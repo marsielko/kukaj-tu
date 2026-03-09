@@ -22,11 +22,20 @@
 
         const resp = await fetch("https://ekasa.financnasprava.sk/mdu/api/v1/opd/receipt/find", {
           method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ receiptId: result.data }),
         });
+        const respData = await resp.json();
 
         console.log("results", resp)
 
+        
+        document.querySelector('#obchod').innerText = "Obchod": respData.receipt.organization.name;
+        document.querySelector('#cena').innerText = "Cena": respData.receipt.totalPrice;
+        
+        
+        
+        
         pending = false;
       }
       
