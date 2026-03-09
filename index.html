@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <script type="module">
+      import QrScanner from './qr-scanner.min.js';
+
+      const videoElem = document.querySelector('video');
+
+      const qrScanner = new QrScanner(
+          videoElem,
+          result => console.log('decoded qr code:', result),
+          { /* your options or returnDetailedScanResult: true if you're not specifying any other options */ },
+      );
+
+      qrScanner.start();
+
+
+    </script>
+  </head>
+  <body>
+    <video></video>
+    <div id="obchod"></div>
+    <div id="cena"></div>
+  </body>
+</html>
