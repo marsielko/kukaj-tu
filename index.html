@@ -30,8 +30,8 @@
         console.log("results", resp)
 
         
-        document.querySelector('#obchod').innerText = "Obchod": respData.receipt.organization.name;
-        document.querySelector('#cena').innerText = "Cena": respData.receipt.totalPrice;
+        document.querySelector('#obchod').innerText = "Obchod: " + respData?.receipt?.organization?.name;
+        document.querySelector('#cena').innerText = "Cena:" + respData?.receipt?.totalPrice;
         
         
         
